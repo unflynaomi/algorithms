@@ -1,6 +1,6 @@
 #include "stdio.h"  
 #include "string.h"  
-  
+//实现POJ 3074 数独问题
 struct node  
 {  
     int x,y;  
