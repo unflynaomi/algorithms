@@ -14,7 +14,7 @@ bool grid[10][10];   //grid[k][x] 标记在第k个3*3子格中数字z是否出现了
 
 //(这里说明的字母不代表下面程序中的变量)
 
-bool DFS(int x,int y)
+void DFS(int x,int y)
 {
 	if(x==10)
 	{
@@ -25,7 +25,7 @@ bool DFS(int x,int y)
 			cout<<endl;
 		}
 		cout<<endl;
-		return true;
+	
 	}
 
 	if(map[x][y])  //如果不需要填充

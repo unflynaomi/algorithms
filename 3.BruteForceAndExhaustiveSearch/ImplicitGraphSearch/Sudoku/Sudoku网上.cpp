@@ -98,7 +98,7 @@ int main(int i,int j)
 
 		/*Fill the Sudoku*/
 
-		if(DFS(1,1))
+		if(DFS(1,1))//如果有解就输出 
 		{
 			for(i=1; i<=9; i++)
 			{
