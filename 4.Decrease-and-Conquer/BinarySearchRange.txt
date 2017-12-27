@@ -1,0 +1,40 @@
+public class S34 {  
+  
+    public static void main(String[] args) {  
+        int[] A = {5,8,8,8,8,8,8,8,8,10};  
+        int[] ret = searchRange(A, 10);  
+        System.out.println(Arrays.toString(ret));  
+    }  
+  
+    public static int[] searchRange(int[] A, int target) {  
+        int[] ret = {Integer.MAX_VALUE, Integer.MIN_VALUE};  
+        rec(A, target, ret, 0, A.length-1);  
+        if(ret[0] == Integer.MAX_VALUE){  
+            ret[0] = -1;  
+        }  
+        if(ret[1] == Integer.MIN_VALUE){  
+            ret[1] = -1;  
+        }  
+        return ret;  
+    }  
+      
+    // 先用二分法找到满足条件，然后对两边分别二分法继续寻找  
+    public static void rec(int[] A, int target, int[] ret, int low, int high){  
+        if(low > high){  
+            return;  
+        }  
+          
+        int mid = low + (high-low)/2;  
+        if(target == A[mid]){  
+            ret[0] = Math.min(ret[0], mid);     // 保存最小下限  
+            ret[1] = Math.max(ret[1], mid);     // 保存最大上限  
+            rec(A, target, ret, low, mid-1);        // 继续找满足条件的下限  
+            rec(A, target, ret, mid+1, high);       // 继续找满足条件的上限  
+        }else if(target < A[mid]){  
+            rec(A, target, ret, low, mid-1);  
+        }else{  
+            rec(A, target, ret, mid+1, high);  
+        }  
+    }  
+  
+}  
