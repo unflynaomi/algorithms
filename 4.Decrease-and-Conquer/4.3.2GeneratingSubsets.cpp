@@ -30,7 +30,7 @@ vector<string> getSubset(int n)
 		for(int i=0; i<k; i++)
 		{
 			string str=former[i];
-			former.push_back(str+getString(n));
+			former.push_back(str+getString(n));//push_back没有n的那些子集都在，给former里所有的元素都加上n,就是包含n的子集了 
 		}
 		return former;
 	}

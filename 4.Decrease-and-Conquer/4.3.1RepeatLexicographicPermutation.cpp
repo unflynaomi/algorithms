@@ -1,7 +1,7 @@
 #include<iostream>
 #include<map>
 using namespace std;
-//按照字典序排序 产生1-n的全排列，需要使用额外空间 
+//按照可重集字典序排序 产生1-n的全排列，需要使用额外空间 
 int n;
 int count;
 void permutation(int* permute,int size,map<int, int>& inputMap)
